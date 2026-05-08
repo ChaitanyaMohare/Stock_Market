@@ -1,4 +1,3 @@
-import React from 'react';
 import Hero from './Hero';
 import Award from './Award';
 import Stats from './Stats';
@@ -11,6 +10,7 @@ import Navbar from '../Navbar';
 function Homepage() {
     return ( 
         <>
+           <Navbar />
            <Hero />
            <Award />
            <Stats />
@@ -18,7 +18,6 @@ function Homepage() {
            <Education />
            <OpenAccount />
            <Footer />
-           <Navbar />
         </>
     );
 }
