@@ -1,3 +1,4 @@
+// watchlist
 export const watchlist = [
   {
     name: "INFY",
@@ -190,4 +191,4 @@ export const positions = [
     day: "-1.35%",
     isLoss: true,
   },
-];
+]; 
