@@ -1,24 +1,33 @@
 import React from "react";
-
-import Menu from "./Menu";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const TopBar = () => {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <div className="topbar-container">
-      <div className="indices-container">
-        <div className="nifty">
-          <p className="index">NIFTY 50</p>
-          <p className="index-points">{100.2} </p>
-          <p className="percent"> </p>
-        </div>
-        <div className="sensex">
-          <p className="index">SENSEX</p>
-          <p className="index-points">{100.2}</p>
-          <p className="percent"></p>
-        </div>
+      <div className="topbar-left">
+        <img src="/logo.png" alt="Kite" style={{ height: '30px' }} />
       </div>
-
-      <Menu />
+      <div className="topbar-center">
+        <Link to="/">Dashboard</Link>
+        <Link to="/orders">Orders</Link>
+        <Link to="/holdings">Holdings</Link>
+        <Link to="/positions">Positions</Link>
+        <Link to="/funds">Funds</Link>
+        <Link to="/apps">Apps</Link>
+      </div>
+      <div className="topbar-right">
+        <span className="user-id">{user?.username || "User"}</span>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
+      </div>
     </div>
   );
 };
