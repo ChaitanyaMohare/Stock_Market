@@ -57,4 +57,4 @@ function PricingPage() {
   );
 }
 
-export default PricingPage;
+export default productPage;
