@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import HomePage from './landing_page/home/Homepage';
 import Signup from './landing_page/signup/Signup';
 import About from './landing_page/about/Aboutpage';
-import Product from './landing_page/products/ProductsPage.js';
+import Product from './landing_page/products/productsPage.js';
 import Pricing from './landing_page/pricing/PricingPage.js';
 import Support from './landing_page/support/SupportPage.js';
 import Navbar from './landing_page/Navbar.js';
