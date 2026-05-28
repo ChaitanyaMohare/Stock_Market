@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [token, setToken] = useState(localStorage.getItem("token"));
 
-  const API_URL = "http://localhost:3002";
+  const API_URL = process.env.REACT_APP_API_URL || "https://stock-market-backend-g3ob.onrender.com";
 
   // Check if user is logged in on mount
   useEffect(() => {
