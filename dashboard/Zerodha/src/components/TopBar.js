@@ -1,16 +1,7 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login");
-  };
-
   return (
     <div className="topbar-container">
       <div className="topbar-left">
@@ -25,8 +16,7 @@ const TopBar = () => {
         <Link to="/apps">Apps</Link>
       </div>
       <div className="topbar-right">
-        <span className="user-id">{user?.username || "User"}</span>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+        <span className="user-id">Guest User</span>
       </div>
     </div>
   );

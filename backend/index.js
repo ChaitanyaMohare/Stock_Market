@@ -153,8 +153,8 @@ app.get("/", (req, res) => {
   res.send("Stock Platform API - Server is running");
 });
 
-// Get all holdings (protected)
-app.get("/allHoldings", authenticateToken, async (req, res) => {
+// Get all holdings
+app.get("/allHoldings", async (req, res) => {
   try {
     let allHoldings = await HoldingsModel.find({});
     res.json(allHoldings);
@@ -163,8 +163,8 @@ app.get("/allHoldings", authenticateToken, async (req, res) => {
   }
 });
 
-// Get all positions (protected)
-app.get("/allPositions", authenticateToken, async (req, res) => {
+// Get all positions
+app.get("/allPositions", async (req, res) => {
   try {
     let allPositions = await PositionsModel.find({});
     res.json(allPositions);
@@ -173,8 +173,8 @@ app.get("/allPositions", authenticateToken, async (req, res) => {
   }
 });
 
-// Create new order (protected)
-app.post("/newOrder", authenticateToken, async (req, res) => {
+// Create new order
+app.post("/newOrder", async (req, res) => {
   try {
     let newOrder = new OrdersModel({
       name: req.body.name,
